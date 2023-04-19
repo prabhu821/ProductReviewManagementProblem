@@ -33,6 +33,10 @@
                 new ProductReview() { ProductId = 24, userId = 24, Rating = 5, Review = "Excelent", IsLike = false },
                 new ProductReview() { ProductId = 25, userId = 25, Rating = 1, Review = "Worst", IsLike = true }
             };
+
+            ProductReviewMain productReviewMain = new ProductReviewMain();
+            productReviewMain.AddProductList(productReviews);
+            productReviewMain.RetriveTopRecords();
         }
     }
 }
