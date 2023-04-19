@@ -39,7 +39,7 @@
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("\nSelect option to Retrive \n1.Top 3 Records \n2.All Records \n3.Exit");
+                Console.WriteLine("\nSelect option to Retrive \n1.Top 3 Records \n2.All Records \n3.All Records Group By \n4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -49,6 +49,9 @@
                     case 2:
                         productReviewMain.RetriveAllRecords();
                         break ;
+                    case 3:
+                        productReviewMain.RetriveAllRecordsGroupBy();
+                        break;
                     default:
                         flag = false;
                         break;

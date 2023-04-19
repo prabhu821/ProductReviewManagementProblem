@@ -33,5 +33,16 @@ namespace ProductReviewManagementProblem
             var result = this.productReviews.Where(x => x.Rating > 3 && (x.ProductId == 1 || x.ProductId == 4 || x.ProductId == 9));
             Display(result.ToList());
         }
+
+        //uc3
+        public void RetriveAllRecordsGroupBy()
+        {
+            var result = this.productReviews.GroupBy(x => x.ProductId);
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.Count());
+                Display(item.ToList());
+            }
+        }
     }
 }
