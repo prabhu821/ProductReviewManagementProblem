@@ -36,7 +36,24 @@
 
             ProductReviewMain productReviewMain = new ProductReviewMain();
             productReviewMain.AddProductList(productReviews);
-            productReviewMain.RetriveTopRecords();
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("\nSelect option to Retrive \n1.Top 3 Records \n2.All Records \n3.Exit");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        productReviewMain.RetriveTopRecords();
+                        break;
+                    case 2:
+                        productReviewMain.RetriveAllRecords();
+                        break ;
+                    default:
+                        flag = false;
+                        break;
+                }
+            }
         }
     }
 }
