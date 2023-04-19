@@ -44,5 +44,15 @@ namespace ProductReviewManagementProblem
                 Display(item.ToList());
             }
         }
+
+        //uc4
+        public void RetriveAllRecordsFields()
+        {
+            var result = this.productReviews.Select(x => new { x.ProductId, x.Rating });
+            foreach (var item in result)
+            {
+                Console.WriteLine("ProductId : " + item.ProductId + " ==>  Rating : " + item.Rating);
+            }
+        }
     }
 }
