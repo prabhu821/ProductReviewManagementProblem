@@ -40,7 +40,7 @@
             while (flag)
             {
                 Console.WriteLine("\nSelect option to Retrive \n1.Top 3 Records \n2.All Records \n3.All Records Group By " +
-                    "\n4.All Records Fields \n5.Exit");
+                    "\n4.All Records Fields \n5.Skip Top 5 Records \n6.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -49,13 +49,16 @@
                         break;
                     case 2:
                         productReviewMain.RetriveAllRecords();
-                        break ;
+                        break;
                     case 3:
                         productReviewMain.RetriveAllRecordsGroupBy();
                         break;
                     case 4:
                         productReviewMain.RetriveAllRecordsFields();
-                        break ;
+                        break;
+                    case 5:
+                        productReviewMain.SkipTop5Records();
+                        break;
                     default:
                         flag = false;
                         break;
