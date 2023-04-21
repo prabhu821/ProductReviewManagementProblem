@@ -62,5 +62,15 @@ namespace ProductReviewManagementProblem
             var result = this.productReviews.OrderByDescending(x => x.Rating).Skip(5);
             Display(result.ToList());
         }
+
+        //uc7  
+        public void RetrieveProductIdAndReview()
+        {
+            var result = this.productReviews.Select(x => new { x.ProductId, x.Review });
+            foreach (var item in result)
+            {
+                Console.WriteLine("ProductId : " + item.ProductId + " ==> Review : " + item.Review);
+            }
+        }
     }
 }
