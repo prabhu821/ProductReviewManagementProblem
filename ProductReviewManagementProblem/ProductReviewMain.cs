@@ -72,5 +72,12 @@ namespace ProductReviewManagementProblem
                 Console.WriteLine("ProductId : " + item.ProductId + " ==> Review : " + item.Review);
             }
         }
+
+        //uc11
+        public void RetriveUsingMessage()
+        {
+            var result = this.productReviews.Where(x => x.Review.Contains("Good"));
+            Display(result.ToList());
+        }
     }
 }
