@@ -56,5 +56,18 @@ namespace ProductReviewManagementProblem
                     row["ProductID"], row["UserID"], row["Rating"], row["Review"], row["isLike"]);
             }
         }
+
+        //uc9
+        public void RetrieveWhoseIsLikeIsTrue()
+        {
+            var results = from DataRow row in dt.Rows
+                          where (bool)row["isLike"] == true
+                          select row;
+            foreach (DataRow row in results)
+            {
+                Console.WriteLine("ProductID: {0}, UserID: {1}, Rating: {2}, Review: {3}, isLike: {4}",
+                    row["ProductID"], row["UserID"], row["Rating"], row["Review"], row["isLike"]);
+            }
+        }
     }
 }

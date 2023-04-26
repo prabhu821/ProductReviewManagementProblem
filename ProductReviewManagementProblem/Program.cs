@@ -43,7 +43,7 @@
             {
                 Console.WriteLine("\nSelect option to Retrive \n1.Top 3 Records \n2.All Records \n3.All Records Group By " +
                     "\n4.All Records Fields \n5.Skip Top 5 Records \n6.All Records of ProductID and Review \n7.Display Table " +
-                    "\n8.Exit");
+                    "\n8.Retrieve IsLike Equals True \n9.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -67,6 +67,9 @@
                         break;
                     case 7:
                         dataTableLinq.DisplayTable();
+                        break;
+                    case 8:
+                        dataTableLinq.RetrieveWhoseIsLikeIsTrue();
                         break;
                     default:
                         flag = false;
