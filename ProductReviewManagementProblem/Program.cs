@@ -43,7 +43,8 @@
             {
                 Console.WriteLine("\nSelect option to Retrive \n1.Top 3 Records \n2.All Records \n3.All Records Group By " +
                     "\n4.All Records Fields \n5.Skip Top 5 Records \n6.All Records of ProductID and Review \n7.Display Table " +
-                    "\n8.Retrieve IsLike Equals True \n9.Average Rating using ProductID \n10.Retrieve Using Review Message \n11.Exit");
+                    "\n8.Retrieve IsLike Equals True \n9.Average Rating using ProductID \n10.Retrieve Using Review Message " +
+                    "\n11.Retrieve Using UserID \n12.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -76,6 +77,9 @@
                         break;
                     case 10:
                         productReviewMain.RetriveUsingMessage();
+                        break;
+                    case 11:
+                        dataTableLinq.RetrieveUsingUserID();
                         break;
                     default:
                         flag = false;

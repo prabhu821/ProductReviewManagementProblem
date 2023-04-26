@@ -22,30 +22,30 @@ namespace ProductReviewManagementProblem
 
             DataRow row = dt.NewRow();
             dt.Rows.Add("1", "1", "5", "Excelent", true);
-            dt.Rows.Add("2", "2", "2", "Bad", true);
-            dt.Rows.Add("3", "3", "3", "Average", false);
-            dt.Rows.Add("4", "4", "5", "Excelent", true);
+            dt.Rows.Add("2", "9", "2", "Bad", true);
+            dt.Rows.Add("3", "8", "3", "Average", false);
+            dt.Rows.Add("4", "2", "5", "Excelent", true);
             dt.Rows.Add("5", "5", "3", "Average", true);
-            dt.Rows.Add("6", "5", "3", "Average", false);
+            dt.Rows.Add("6", "2", "3", "Average", false);
             dt.Rows.Add("7", "4", "1", "Worst", true);
-            dt.Rows.Add("8", "8", "5", "Excelent", false);
-            dt.Rows.Add("9", "9", "5", "Excelent", false);
+            dt.Rows.Add("8", "2", "5", "Excelent", false);
+            dt.Rows.Add("9", "6", "5", "Excelent", false);
             dt.Rows.Add("1", "10", "4", "Good", true);
-            dt.Rows.Add("1", "11", "2", "Bad", false);
-            dt.Rows.Add("2", "12", "1", "Worst", true);
-            dt.Rows.Add("3", "13", "3", "Average", true);
-            dt.Rows.Add("4", "14", "4", "Good", false);
-            dt.Rows.Add("5", "15", "5", "Excelent", true);
-            dt.Rows.Add("6", "16", "3", "Average", false);
-            dt.Rows.Add("7", "17", "2", "Bad", true);
-            dt.Rows.Add("8", "18", "1", "Worst", false);
-            dt.Rows.Add("9", "19", "3", "Average", false);
-            dt.Rows.Add("2", "20", "4", "Good", true);
-            dt.Rows.Add("1", "21", "1", "Worst", true);
-            dt.Rows.Add("2", "22", "2", "Bad", false);
-            dt.Rows.Add("3", "23", "3", "Average", true);
-            dt.Rows.Add("4", "24", "4", "Good", false);
-            dt.Rows.Add("5", "25", "5", "Excelent", true);
+            dt.Rows.Add("1", "1", "2", "Bad", false);
+            dt.Rows.Add("2", "10", "1", "Worst", true);
+            dt.Rows.Add("3", "3", "3", "Average", true);
+            dt.Rows.Add("4", "4", "4", "Good", false);
+            dt.Rows.Add("5", "5", "5", "Excelent", true);
+            dt.Rows.Add("6", "10", "3", "Average", false);
+            dt.Rows.Add("7", "7", "2", "Bad", true);
+            dt.Rows.Add("8", "8", "1", "Worst", false);
+            dt.Rows.Add("9", "9", "3", "Average", false);
+            dt.Rows.Add("2", "10", "4", "Good", true);
+            dt.Rows.Add("1", "10", "1", "Worst", true);
+            dt.Rows.Add("2", "2", "2", "Bad", false);
+            dt.Rows.Add("3", "10", "3", "Average", true);
+            dt.Rows.Add("4", "4", "4", "Good", false);
+            dt.Rows.Add("5", "5", "5", "Excelent", true);
         }
 
         public void DisplayTable()
@@ -84,6 +84,20 @@ namespace ProductReviewManagementProblem
             {
                 Console.WriteLine("ProductID: {0}, AvgRating: {1}",
                     result.ProductID, result.AvgRating);
+            }
+        }
+
+        //uc12
+        public void RetrieveUsingUserID()
+        {
+            var results = from DataRow row in dt.Rows
+                          where (int)row["UserID"] == 10
+                          orderby (int)row["Rating"]
+                          select row;
+            foreach (DataRow row in results)
+            {
+                Console.WriteLine("ProductID: {0}, UserID: {1}, Rating: {2}, Review: {3}, isLike: {4}",
+                    row["ProductID"], row["UserID"], row["Rating"], row["Review"], row["isLike"]);
             }
         }
     }
